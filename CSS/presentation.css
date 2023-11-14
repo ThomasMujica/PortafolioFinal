@@ -1,0 +1,463 @@
+html {
+  --scale-15: 1.5, 1.5, 1.5;
+  --scale-1: 1, 1, 1;
+  --scale-08: 0.8, 0.8, 0.8;
+  --scale-05: 0.5, 0.5, 0.5;
+  --scale-03: 0.3, 0.3, 0.3;
+  --scale-02: 0.2, 0.2, 0.2;
+}
+
+.containerPortada {
+  width: 100vw;
+  height: 100vh;
+  /* perspective para compatibilidad con iphone 3.0, nosotros dejamos apagada la unidad aqui  */
+  perspective: 800px;
+  perspective-origin: 50% 225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><circle cx="2.5" cy="2.5" r="2.5" fill="%23000"/></svg>'),
+    linear-gradient(-45deg, #000000, #716f6f, #eeeeee);
+  animation: gradient 100s ease;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 100%;
+    background: linear-gradient(180deg);
+  }
+  100% {
+    background-position: 100% 0%;
+    background: linear-gradient(180deg);
+  }
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 7s ease-out; /* Ajusta la duración y el efecto según tus necesidades */
+  pointer-events: none;
+}
+
+#stage {
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+#shape {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  transform-style: preserve-3d;
+}
+
+.plane {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Times, serif;
+  font-size: 124pt;
+  color: rgba(171, 145, 68, 1);
+  background-color: rgba(124, 48, 48, 0.6);
+  transition: transform 2s, opacity 2s;
+}
+
+.cubeAnimacion {
+  animation-name: cubeAnimacion;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes cubeAnimacion {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-365deg) rotateX(5deg) rotateY(5deg);
+  }
+}
+
+.cube > .one {
+  opacity: 0.5;
+  transform: scale3d(var(--scale-08)) rotateX(90deg) translateZ(100px);
+}
+
+.cube > .two {
+  opacity: 0.5;
+  transform: scale3d(var(--scale-08)) translateZ(100px);
+}
+
+.cube > .three {
+  opacity: 0.5;
+  transform: scale3d(var(--scale-08)) rotateY(90deg) translateZ(100px);
+}
+
+.cube > .four {
+  opacity: 0.5;
+  transform: scale3d(var(--scale-08)) rotateY(180deg) translateZ(100px);
+}
+
+.cube > .five {
+  opacity: 0.5;
+  transform: scale3d(var(--scale-08)) rotateY(-90deg) translateZ(100px);
+}
+
+.cube > .six {
+  opacity: 0.5;
+  transform: scale3d(var(--scale-08)) rotateX(-90deg) translateZ(100px)
+    rotate(180deg);
+}
+
+.cube > .seven {
+  transform: scale3d(var(--scale-05)) rotateX(90deg) translateZ(100px)
+    rotate(180deg);
+}
+
+.cube > .eight {
+  transform: scale3d(var(--scale-05)) translateZ(100px);
+}
+
+.cube > .nine {
+  transform: scale3d(var(--scale-05)) rotateY(90deg) translateZ(100px);
+}
+
+.cube > .ten {
+  transform: scale3d(var(--scale-05)) rotateY(180deg) translateZ(100px);
+}
+
+.cube > .eleven {
+  transform: scale3d(var(--scale-05)) rotateY(-90deg) translateZ(100px);
+}
+
+.cube > .twelve {
+  transform: scale3d(var(--scale-05)) rotateX(-90deg) translateZ(100px);
+}
+
+.ringAnimacion {
+  animation-name: ringAnimacion;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes ringAnimacion {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+.ring > .one {
+  transform: scale3d(var(--scale-03)) translateZ(380px);
+}
+
+.ring > .two {
+  transform: scale3d(var(--scale-03)) rotateY(30deg) translateZ(380px);
+}
+
+.ring > .three {
+  transform: scale3d(var(--scale-03)) rotateY(60deg) translateZ(380px);
+}
+
+.ring > .four {
+  transform: scale3d(var(--scale-03)) rotateY(90deg) translateZ(380px);
+}
+
+.ring > .five {
+  transform: scale3d(var(--scale-03)) rotateY(120deg) translateZ(380px);
+}
+
+.ring > .six {
+  transform: scale3d(var(--scale-03)) rotateY(150deg) translateZ(380px);
+}
+
+.ring > .seven {
+  transform: scale3d(var(--scale-03)) rotateY(180deg) translateZ(380px);
+}
+
+.ring > .eight {
+  transform: scale3d(var(--scale-03)) rotateY(210deg) translateZ(380px);
+}
+
+.ring > .nine {
+  transform: scale3d(var(--scale-03)) rotateY(-120deg) translateZ(380px);
+}
+
+.ring > .ten {
+  transform: scale3d(var(--scale-03)) rotateY(-90deg) translateZ(380px);
+}
+
+.ring > .eleven {
+  transform: scale3d(var(--scale-03)) rotateY(300deg) translateZ(380px);
+}
+
+.ring > .twelve {
+  transform: scale3d(var(--scale-03)) rotateY(330deg) translateZ(380px);
+}
+
+.finalAnimacion {
+  animation-name: finalAnimacion;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes finalAnimacion {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+.final > .one {
+  transform: scale3d(var(--scale-02)) translateX(-660px);
+  background-color: transparent;
+}
+
+.final > .two {
+  transform: scale3d(var(--scale-02)) translateX(-550px);
+  background-color: transparent;
+}
+
+.final > .three {
+  transform: scale3d(var(--scale-02)) translateX(-440px);
+  background-color: transparent;
+}
+
+.final > .four {
+  transform: scale3d(var(--scale-02)) translateX(-320px);
+  background-color: transparent;
+}
+
+.final > .five {
+  transform: scale3d(var(--scale-02)) translateX(-210px);
+  background-color: transparent;
+}
+
+.final > .six {
+  transform: scale3d(var(--scale-02)) translateX(-110px);
+  background-color: transparent;
+}
+
+.final > .seven {
+  transform: scale3d(var(--scale-02)) translateX(100px);
+  background-color: transparent;
+}
+
+.final > .eight {
+  transform: scale3d(var(--scale-02)) translateX(230px);
+  background-color: transparent;
+}
+
+.final > .nine {
+  transform: scale3d(var(--scale-02)) translateX(330px);
+  background-color: transparent;
+}
+
+.final > .ten {
+  transform: scale3d(var(--scale-02)) translateX(400px);
+  background-color: transparent;
+}
+
+.final > .eleven {
+  transform: scale3d(var(--scale-02)) translateX(500px);
+  background-color: transparent;
+}
+
+.final > .twelve {
+  transform: scale3d(var(--scale-02)) translateX(600px);
+  background-color: transparent;
+}
+
+.portafolioAnimacion {
+  animation-name: portafolioAnimacion;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
+
+.final > .portfolio {
+  color: #eeeeee;
+  background: transparent;
+  transform: scale3d(0.17, 0.17, 0.17) translateX(-245px) translateY(200px);
+}
+
+@media screen and (min-width: 800px) {
+  .cube > .one {
+    opacity: 0.5;
+    transform: scale3d(var(--scale-15)) rotateX(90deg) translateZ(100px);
+  }
+
+  .cube > .two {
+    opacity: 0.5;
+    transform: scale3d(var(--scale-15)) translateZ(100px);
+  }
+
+  .cube > .three {
+    opacity: 0.5;
+    transform: scale3d(var(--scale-15)) rotateY(90deg) translateZ(100px);
+  }
+
+  .cube > .four {
+    opacity: 0.5;
+    transform: scale3d(var(--scale-15)) rotateY(180deg) translateZ(100px);
+  }
+
+  .cube > .five {
+    opacity: 0.5;
+    transform: scale3d(var(--scale-15)) rotateY(-90deg) translateZ(100px);
+  }
+
+  .cube > .six {
+    opacity: 0.5;
+    transform: scale3d(var(--scale-15)) rotateX(-90deg) translateZ(100px)
+      rotate(180deg);
+  }
+
+  .cube > .seven {
+    transform: scale3d(var(--scale-1)) rotateX(90deg) translateZ(100px)
+      rotate(180deg);
+  }
+
+  .cube > .eight {
+    transform: scale3d(var(--scale-1)) translateZ(100px);
+  }
+
+  .cube > .nine {
+    transform: scale3d(var(--scale-1)) rotateY(90deg) translateZ(100px);
+  }
+
+  .cube > .ten {
+    transform: scale3d(var(--scale-1)) rotateY(180deg) translateZ(100px);
+  }
+
+  .cube > .eleven {
+    transform: scale3d(var(--scale-1)) rotateY(-90deg) translateZ(100px);
+  }
+
+  .cube > .twelve {
+    transform: scale3d(var(--scale-1)) rotateX(-90deg) translateZ(100px);
+  }
+
+  .ring > .one {
+    transform: scale3d(var(--scale-08)) translateZ(380px);
+  }
+
+  .ring > .two {
+    transform: scale3d(var(--scale-08)) rotateY(30deg) translateZ(380px);
+  }
+
+  .ring > .three {
+    transform: scale3d(var(--scale-08)) rotateY(60deg) translateZ(380px);
+  }
+
+  .ring > .four {
+    transform: scale3d(var(--scale-08)) rotateY(90deg) translateZ(380px);
+  }
+
+  .ring > .five {
+    transform: scale3d(var(--scale-08)) rotateY(120deg) translateZ(380px);
+  }
+
+  .ring > .six {
+    transform: scale3d(var(--scale-08)) rotateY(150deg) translateZ(380px);
+  }
+
+  .ring > .seven {
+    transform: scale3d(var(--scale-08)) rotateY(180deg) translateZ(380px);
+  }
+
+  .ring > .eight {
+    transform: scale3d(var(--scale-08)) rotateY(210deg) translateZ(380px);
+  }
+
+  .ring > .nine {
+    transform: scale3d(var(--scale-08)) rotateY(-120deg) translateZ(380px);
+  }
+
+  .ring > .ten {
+    transform: scale3d(var(--scale-08)) rotateY(-90deg) translateZ(380px);
+  }
+
+  .ring > .eleven {
+    transform: scale3d(var(--scale-08)) rotateY(300deg) translateZ(380px);
+  }
+
+  .ring > .twelve {
+    transform: scale3d(var(--scale-08)) rotateY(330deg) translateZ(380px);
+  }
+
+  .final > .one {
+    transform: scale3d(var(--scale-05)) translateX(-660px);
+    background-color: transparent;
+  }
+
+  .final > .two {
+    transform: scale3d(var(--scale-05)) translateX(-550px);
+    background-color: transparent;
+  }
+
+  .final > .three {
+    transform: scale3d(var(--scale-05)) translateX(-440px);
+    background-color: transparent;
+  }
+
+  .final > .four {
+    transform: scale3d(var(--scale-05)) translateX(-320px);
+    background-color: transparent;
+  }
+
+  .final > .five {
+    transform: scale3d(var(--scale-05)) translateX(-210px);
+    background-color: transparent;
+  }
+
+  .final > .six {
+    transform: scale3d(var(--scale-05)) translateX(-110px);
+    background-color: transparent;
+  }
+
+  .final > .seven {
+    transform: scale3d(var(--scale-05)) translateX(100px);
+    background-color: transparent;
+  }
+
+  .final > .eight {
+    transform: scale3d(var(--scale-05)) translateX(230px);
+    background-color: transparent;
+  }
+
+  .final > .nine {
+    transform: scale3d(var(--scale-05)) translateX(330px);
+    background-color: transparent;
+  }
+
+  .final > .ten {
+    transform: scale3d(var(--scale-05)) translateX(400px);
+    background-color: transparent;
+  }
+
+  .final > .eleven {
+    transform: scale3d(var(--scale-05)) translateX(500px);
+    background-color: transparent;
+  }
+
+  .final > .twelve {
+    transform: scale3d(var(--scale-05)) translateX(600px);
+    background-color: transparent;
+  }
+
+  .final > .portfolio {
+    color: #eeeeee;
+    background: transparent;
+    transform: scale3d(var(--scale-03)) translateX(-245px) translateY(200px);
+  }
+}
