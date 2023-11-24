@@ -16,8 +16,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><circle cx="2.5" cy="2.5" r="2.5" fill="%23000"/></svg>'),
-    linear-gradient(-45deg, #000000, #716f6f, #eeeeee);
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><circle cx="2.5" cy="2.5" r="2.5" fill="#eeeeee"/></svg>'),
+    linear-gradient(-45deg, #253c59, #253c59, #253c59);
   animation: gradient 100s ease;
   overflow: hidden;
 }
@@ -56,12 +56,13 @@ html {
   height: 200px;
   width: 200px;
   border-radius: 12px;
+  border: 1px #eeeeee solid;
   box-sizing: border-box;
   text-align: center;
   font-family: Times, serif;
   font-size: 124pt;
-  color: rgba(171, 145, 68, 1);
-  background-color: rgba(124, 48, 48, 0.6);
+  color: rgba(242, 242, 242, 1);
+  background-color: rgba(37, 60, 89, 0.6);
   transition: transform 2s, opacity 2s;
 }
 
@@ -395,69 +396,59 @@ html {
     transform: scale3d(var(--scale-08)) rotateY(330deg) translateZ(380px);
   }
 
+  .final > * {
+    background-color: transparent;
+  }
+
   .final > .one {
     transform: scale3d(var(--scale-05)) translateX(-660px);
-    background-color: transparent;
   }
 
   .final > .two {
     transform: scale3d(var(--scale-05)) translateX(-550px);
-    background-color: transparent;
   }
 
   .final > .three {
     transform: scale3d(var(--scale-05)) translateX(-440px);
-    background-color: transparent;
   }
 
   .final > .four {
     transform: scale3d(var(--scale-05)) translateX(-320px);
-    background-color: transparent;
   }
 
   .final > .five {
     transform: scale3d(var(--scale-05)) translateX(-210px);
-    background-color: transparent;
   }
 
   .final > .six {
     transform: scale3d(var(--scale-05)) translateX(-110px);
-    background-color: transparent;
   }
 
   .final > .seven {
     transform: scale3d(var(--scale-05)) translateX(100px);
-    background-color: transparent;
   }
 
   .final > .eight {
     transform: scale3d(var(--scale-05)) translateX(230px);
-    background-color: transparent;
   }
 
   .final > .nine {
     transform: scale3d(var(--scale-05)) translateX(330px);
-    background-color: transparent;
   }
 
   .final > .ten {
     transform: scale3d(var(--scale-05)) translateX(400px);
-    background-color: transparent;
   }
 
   .final > .eleven {
     transform: scale3d(var(--scale-05)) translateX(500px);
-    background-color: transparent;
   }
 
   .final > .twelve {
     transform: scale3d(var(--scale-05)) translateX(600px);
-    background-color: transparent;
   }
 
   .final > .portfolio {
-    color: #eeeeee;
-    background: transparent;
     transform: scale3d(var(--scale-03)) translateX(-245px) translateY(200px);
   }
 }

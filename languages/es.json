@@ -1,0 +1,21 @@
+{
+  "main": {
+    "title": "Hola, me llamo Thomas",
+    "paragraph": "Naci en 1991, en Caracas, Venezuela, Actualmente vivo en Santiago de Chile, Me gusta desarrollar interfaces sólidas y productos escalables que permitan grandes experiencias de usuario."
+  },
+  "navInfo": {
+    "searchH2": "Te gusta mi Portafolio?",
+    "searchP": "Aquí podrás buscar y navegar más fácilmente, ¡disfrútalo!",
+    "studiesH2": "Experiencias!!!",
+    "studiesP": "Estudios y trabajos en los que he participado.",
+    "studiesA1": "Curriculum vitae",
+    "studiesA2": "Portafolio",
+    "blogH2": "Conoce mas sobre mi.",
+    "blogP": "Este espacio es muy personal y especial, aquí podrás conocer un poco mas de mi vida.",
+    "blogA1": "Biografia",
+    "blogA2": "Viajes",
+    "blogA3": "Pasatiempos",
+    "contactH2": "Contactame!!!",
+    "contactP": "Te dejo por aquí algunas maneras, espero tu contacto para poder trabajar y aprender juntos."
+  }
+}

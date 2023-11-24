@@ -25,6 +25,7 @@ function toggleClassName(inElement, inClassName) {
 const animated = document.getElementById("shape");
 const portfolioWork = document.getElementById("portfolioWork");
 const containerPortada = document.getElementById("containerPortada");
+const planes = document.querySelectorAll(".plane");
 
 animated.onanimationend = () => {
   var shape = document.getElementById("shape");
@@ -35,10 +36,14 @@ animated.onanimationend = () => {
     removeClassName(shape, "ring ringAnimacion");
     addClassName(shape, "final finalAnimacion");
     portfolioWork.style.display = "inline";
+    planes.forEach((plane) => {
+      plane.style.border = "none";
+    });
   } else if (hasClassName(shape, "final")) {
     containerPortada.classList.add("fadeOut");
     setTimeout(() => {
       containerPortada.style.display = "none";
-    }, 20000);
+      window.location.href = "start.html";
+    }, 7000);
   }
 };

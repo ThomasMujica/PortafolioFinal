@@ -1,0 +1,21 @@
+{
+  "main": {
+    "title": "Hi, my name is Thomas",
+    "paragraph": "Born in 1991 in Caracas, Venezuela, I currently live in Santiago de Chile, I like to develop solid interfaces and scalable products that allow great user experiences."
+  },
+  "navInfo": {
+    "searchH2": "Are you liking my Portfolio?",
+    "searchP": "Here you can search and navigate more easily, enjoy it!",
+    "studiesH2": "Experiences!!!",
+    "studiesP": "Studies and works in which I have participated.",
+    "studiesA1": "Curriculum vitae",
+    "studiesA2": "Portfolio",
+    "blogH2": "Learn more about me.",
+    "blogP": "This space is very personal and special, here you can learn about my life in summary.",
+    "blogA1": "Biography",
+    "blogA2": "Travels",
+    "blogA3": "Hobbies",
+    "contactH2": "Contact me!!!",
+    "contactP": "I leave you here some ways, I am waiting for your contact to be able to work and learn together."
+  }
+}
