@@ -1,8 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("header.html")
-    .then((response) => response.text())
+  Promise.all([
+    fetch("header.html").then((response) => response.text()), // Obtener el contenido de header.html
+    fetch("footer.html").then((response) => response.text()), // Obtener el contenido de footer.html
+  ])
     .then((data) => {
-      document.getElementById("header-container").innerHTML = data;
+      const [headerContent, footerContent] = data; // Separar el contenido en dos variables
+
+      // Establecer el contenido en los elementos del DOM
+      document.getElementById("header-container").innerHTML = headerContent;
+      document.getElementById("footer-container").innerHTML = footerContent;
       /* CONSTANTATES PARA MANIPULACION DEL DOM */
       const $btnsBurgerMenu = document.getElementById("btnsBurgerMenu");
       const $btnBurger = document.getElementById("btnburger");
@@ -17,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const $navigation = document.getElementById("navigation");
       const $allBtn = document.querySelectorAll(".navRight div");
       const $allNavInf = document.querySelectorAll(".navLeft .navInfo");
+      const $main = document.getElementById("main");
+      const $footer = document.getElementById("footer");
 
       /* BOTON PARA CAMBIAR DE ESPAÑOL A INGLES */
       const changeLanguage = async (language) => {
@@ -26,15 +34,28 @@ document.addEventListener("DOMContentLoaded", function () {
         for (const $textToChange of $textsToChange) {
           const section = $textToChange.dataset.section;
           const value = $textToChange.dataset.value;
-
           $textToChange.innerHTML = texts[section][value];
         }
       };
 
+      const selectedLanguage = localStorage.getItem("selectedLanguage");
+      if (selectedLanguage) {
+        changeLanguage(selectedLanguage);
+        if (selectedLanguage === $langEn.dataset.language) {
+          $langEs.classList.remove("allTransition");
+          $langEn.classList.add("allTransition");
+        } else if (selectedLanguage === $langEs.dataset.language) {
+          $langEs.classList.add("allTransition");
+          $langEn.classList.remove("allTransition");
+        }
+      }
+
       $languageElement.addEventListener("click", (e) => {
-        changeLanguage(e.target.dataset.language);
-        $langEn.classList.toggle("allTransition");
+        const selectedLanguage = e.target.dataset.language;
+        localStorage.setItem("selectedLanguage", selectedLanguage);
+        changeLanguage(selectedLanguage);
         $langEs.classList.toggle("allTransition");
+        $langEn.classList.toggle("allTransition");
       });
 
       /* BOTON DEL MENU HAMBURGUESA */
@@ -42,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $btnBurger.classList.toggle("allTransition");
         $btnClose.classList.toggle("allTransition");
         $navigation.classList.toggle("allTransition");
+        $footer.classList.toggle("allTransition");
+        $main.classList.toggle("allTransition");
       });
 
       /* BOTON PARA CAMBIAR DE DARK A LIGHT */
